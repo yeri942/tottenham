@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY</title>
+    <link rel="stylesheet" href="/css/history.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+      
+        <div class="wrap_gnb">
+          <nav class="gnbL">
+            <ul class="gnb" style="font-size: large; padding-left: 0px;">
+              <li> <a href="/gnb/history.html">HISTORY</a> </li>
+              <li> <a href="/gnb/members.html">MEMBERS</a> </li>
+            </ul>
+          </nav>
+          <a href="/tottenham.html" class="logo">
+            <img src="/img/logo.png" alt="토트넘 로고" style="width: 60px; margin-top: 10px;">
+          </a>
+          <nav class="gnbR">
+            <ul class="gnb" style="padding-left: 0px;">
+              <li> <a href="/gnb/news.html">NEWS</a> </li>
+              <li> <a href="/gnb/matchs.html">MATCHS</a> </li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <main>
+          <div class="title">
+              <h3>HISTORY</h3>
+          </div>
+          <div class="content">
+            <div class="history">
+              <h2 class="h21">창단</h2>
+              <h3 style="font-weight: 100;">1882년 9월 5일, 토트넘에 있는 올 할로우 교회 학생들과 바비 버클이 팀을 창단하였다.<br> 창단 뒤 몇 년후 팀원들은 존 립셔 교사를 초대 회장으로 모셔다가 팀을 재조직하고 팀을 위한 땅을 찾으면서 아이들을 지원해준다.<br> 그리고 1884년 같은 지역 팀 홋스퍼와 팀명이 혼동되는것을 방지하기 위해 현재 사용하고 있는 토트넘 홋스퍼로 팀명을 변경했다.</h3>
+              <h2 class="h22">첫 우승</h2>
+              <h3 style="font-weight: 100;">1949년에 아더 로위 감독 취임 후 빌 니콜슨 등을 중심으로 '푸시 앤 런'이라는 스피드를 중시한 공격축구를 선보이며 팀은 새로 변모했다.<br> 알프 램지를 영입한 1949/50 시즌에 15년 만에 1부로 승격시켰고, 바로 다음 시즌인 1950/51 시즌 빌 니콜슨의 활약으로 1부 리그 승격에 이어 1부 리그에서 우승컵을 따냈다.</h3>
+              <h2 class="h23">로고의 변천사</h2>
+              <div class="container" style="
+              margin-top: 40px;">
+                <div class="album">
+                  <div class="images">
+                    <img src="/img/1s.jpg">
+                    <img src="/img/2s.jpg">
+                    <img src="/img/3s.jpg">
+                    <img src="/img/4s.jpg">
+                    <img src="/img/5s.jpg">
+                    <img src="/img/6s.jpg">
+                    <img src="/img/7s.jpg">
+                    <img src="/img/8s.jpg">
+                  </div>
+                </div>
+                <button class="prev"><i class="fas fa-angle-left"></i></button>
+                <button class="next"><i class="fas fa-angle-right"></i></button>  
+              </div>
+            </div>
+            </div>
+
+    </main>
+
+
+    <script>
+
+      // 제이쿼리로 바꿔보기
+
+      let curPos = 0;
+      let postion = 0;
+      const IMAGE_WIDTH = 700;
+      const prevBtn = document.querySelector(".prev")
+      const nextBtn = document.querySelector(".next")
+      const images = document.querySelector(".images")
+      
+      function prev(){
+        if(curPos > 0){
+          nextBtn.removeAttribute("disabled")
+          postion += IMAGE_WIDTH;
+          images.style.transform = `translateX(${postion}px)`;
+          curPos = curPos - 1;
+        }
+        if(curPos == 0){
+          prevBtn.setAttribute('disabled', 'true')
+        }
+      }
+      function next(){
+        if(curPos < 7){
+          prevBtn.removeAttribute("disabled")
+          postion -= IMAGE_WIDTH;
+          images.style.transform = `translateX(${postion}px)`;
+          curPos = curPos + 1;
+        }
+        if(curPos == 7){
+          nextBtn.setAttribute('disabled', 'true')
+        }
+      }
+      
+      function init(){
+        prevBtn.setAttribute('disabled', 'true')
+        prevBtn.addEventListener("click", prev)
+        nextBtn.addEventListener("click", next)
+      }
+      
+      init();
+
+    </script>
+</body>
+</html>
