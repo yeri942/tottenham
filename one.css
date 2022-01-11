@@ -189,14 +189,6 @@ li {
     font-size: 2em;
     margin-bottom: 100px;
 }
-.title h3::after {
-    content: "";
-    width: 607.5px;
-    height: 3px;
-    background-color: rgb(17, 17, 82);
-    position: absolute;
-    transform: translateX(-58.5%) translateY(80px);
-}
 
 .historyWrab {
     padding: 60px 60px 20px 60px;
@@ -225,13 +217,13 @@ li {
 .history h2 {
     margin-top: 100px;
 }
-.history h2:after {
+.history h2.h21:after {
     content: "";
     width: 10%;
     height: 1px;
     background-color: rgb(17, 17, 82);
     position: absolute;
-    transform: translateX(-62%) translateY(80px);
+    transform: translateX(-41%) translateY(40px);
 }
 .history h2.h22:after {
     content: "";
